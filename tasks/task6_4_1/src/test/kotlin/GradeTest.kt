@@ -25,4 +25,8 @@ class GradeTest : StringSpec({
     }
 
     // Add more tests here
+    "Grade out of Bounds" {
+        withClue("Mark=101") { grade(101) shouldBe "?"}
+        withClue("Mark=-1") { grade(-1) shouldBe "?"}
+    }
 })
