@@ -1,5 +1,5 @@
 // Task 7.7.1: stats for a numeric dataset
-fun median(floatList: MutableList<Int>): <Int>{
+fun median(floatList: MutableList<Int>): Int{
     var medianList = mutableMapOf<Int, Int>()
 
     for (x in 0 until floatList.size){
@@ -12,20 +12,25 @@ fun median(floatList: MutableList<Int>): <Int>{
         }
     }
     var highest = 0 
-    for (y in 0 until floatList.size){
-        var current: Int = floatList[y]
-        if (medianList[y]!! > highest){
-            highest = medianList[y]!!
-        }
-    }
+    println(floatList)
+    println(medianList)
+    medianList.forEach{ entry ->
+        if (entry.value > highest){
+            highest = entry.key
+        }}
     return highest
 }
 
 fun main(){
-    readData()
+    val floatList = readData()
+
+    println("Minimum Value: ${floatList.min()}")
+    println("Maximum Value: ${floatList.max()}")
+    println("Mean Value: ${floatList.average()}")
+    println("Median: ${median(floatList)}")
 }
 
-fun readData() {
+fun readData(): MutableList<Int> {
     // Print a prompt for the user
     println("Enter a series of floating-point numbers, type -1 when done.")
     var floatList = mutableListOf<Int>()
@@ -42,7 +47,6 @@ fun readData() {
     for (i in 0 until floatList.size){
         // Inside this loop, call add() to add a number to list
         println(floatList[i])
-
-    println(median(floatList))
     }
+    return floatList
 }
