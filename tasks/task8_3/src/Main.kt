@@ -6,4 +6,5 @@ fun main() {
     //   - Find records with lowest and and highest temperatures
     //   - Compute average temperature
     //   - Display all of these statistics
+    
 }
