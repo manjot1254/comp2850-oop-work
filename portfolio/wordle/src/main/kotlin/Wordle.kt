@@ -36,7 +36,7 @@ fun obtainGuess(attempt: Int): String{
 
 fun evaluateGuess(guess: String, target: String): List<Int>{
     var comparisonList = mutableListOf<Int>()
-    for (n in 1..5){
+    for (n in 0..4){
         if (guess[n] == target[n]){
             comparisonList.add(1)
         }
@@ -48,7 +48,7 @@ fun evaluateGuess(guess: String, target: String): List<Int>{
 }
 
 fun displayGuess(guess: String, matches: List<Int>){
-    for (n in 1..5){
+    for (n in 0..4){
         if (matches[n] == 1){
             print(guess[n])
         }

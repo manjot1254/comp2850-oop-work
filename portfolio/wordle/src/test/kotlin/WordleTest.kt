@@ -15,8 +15,8 @@ class WordleTest : StringSpec({
     (readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt").last()) shouldBe "ZONAL"
 
     // Function 3: pickRandomWord()
+    ((pickRandomWord(readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt"))) in readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt")) shouldBe true
     
-
     // Function 4: obtainGuess()
     obtainGuess(1)
 })
