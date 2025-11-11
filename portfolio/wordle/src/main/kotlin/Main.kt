@@ -1,2 +1,3 @@
-fun main() {    
+fun main() {
+    obtainGuess(1)
 }
