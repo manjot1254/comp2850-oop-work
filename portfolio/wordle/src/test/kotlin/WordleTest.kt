@@ -14,6 +14,13 @@ class WordleTest : StringSpec({
     // Function 3: pickRandomWord()
     ((pickRandomWord(readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt"))) in readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt")) shouldBe true
     // Function 4: obtainGuess()
-    obtainGuess(1)
-
+    //val fakeInput = "APPLE\n".byteInputStream()
+    //System.setIn(fakeInput)
+    //obtainGuess(1) shouldBe "APPLE"
+    // Function 5: evaluateGuess()
+    ((evaluateGuess("APPLE", "APPLE")) shouldBe(listOf(2, 2, 2, 2, 2)))
+    ((evaluateGuess("APPLE", "ALERT")) shouldBe(listOf(2, 0, 0, 1, 1)))
+    ((evaluateGuess("APPLE", "CRUSH")) shouldBe(listOf(0, 0, 0, 0, 0)))
+    // Function 6: displayGuess()
+    displayGuess("APPLE", listOf(2, 1, 0, 0, 1)) 
 })
