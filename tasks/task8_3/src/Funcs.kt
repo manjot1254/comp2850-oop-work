@@ -1,21 +1,10 @@
 // Task 8.3: functions for temperature analysis
-
-fun List<Int>.toRecord(){
-  val other_list = listOf("One", "Two", "Three", "Four", "Five")
-  for (i in 1..other_list.size){
-    (other_list[i], this[i]).to(Record)
-  }
-}  
-  
-}
+typealias Record = Pair<String, Double>
 
 fun fetchData(): List<Record> {
   // Create and return a simulated dataset here
   // Use the listOf() and to() functions to create the dataset
-  val list = listOf(1, 2, 3, 4, 5)
-  for (i in 1..list.size){
-    list.toRecord()
-  }
+  val list = listOf("London" to 25.0, "Stockholm" to 30.0, "Paris" to 55.0, "Berlin" to 40.0)
   return list
 }
 

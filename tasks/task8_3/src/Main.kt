@@ -11,7 +11,7 @@ fun main() {
     val highest = data.maxBy{it.second}
     val mean = averageTemp(data)
 
-    println("$lowest\n")
-    println("$highest\n")
-    println("$mean\n")
+    println("Lowest Temp: $lowest\n")
+    println("Highest Temp: $highest\n")
+    println("Mean: $mean\n")
 }
