@@ -8,11 +8,13 @@ class WordleTest : StringSpec({
     // Function 1: isValid()
     isValid("hello") shouldBe true
     isValid("hell") shouldBe false
+    isValid("helloo") shouldBe false
     // Function 2: readWordList()
     (readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt").first()) shouldBe "ABACK"
     (readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt").last()) shouldBe "ZONAL"
     // Function 3: pickRandomWord()
-    ((pickRandomWord(readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt"))) in readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt")) shouldBe true
+    ((pickRandomWord(readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt")))
+    in readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt"))shouldBe true
     // Function 4: obtainGuess()
     //val fakeInput = "APPLE\n".byteInputStream()
     //System.setIn(fakeInput)

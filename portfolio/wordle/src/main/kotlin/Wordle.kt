@@ -3,6 +3,7 @@ import java.io.File
 import pickRandomWord
 
 fun isValid(word: String): Boolean { 
+    //val maxWordlength: Int = 5
     if (word.length == 5){
         return true
     }
@@ -30,7 +31,7 @@ fun obtainGuess(attempt: Int): String {
     val wordList = readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt");
     val targetWord = pickRandomWord(wordList);
 
-    while (((isValid(word) == true) && (word.uppercase() != targetWord)) && (counter < 7)){
+    while (((isValid(word) == true) && (word.uppercase() != targetWord)) && (counter < 6)){
         println("No match.")
         displayGuess(word.uppercase(), evaluateGuess(word.uppercase(), targetWord))
 
@@ -38,15 +39,18 @@ fun obtainGuess(attempt: Int): String {
         println("\n--Attempt $counter--")
         word = readln().toString()
     }
-    if (counter > 6){
+    if (counter == 6){
         println("Out of guesses")
         println("The word was $targetWord")
+        kotlin.system.exitProcess(0)
 
     }
     else if (isValid(word) != true){
         println("Invalid guess")
         println("The word was $targetWord")
+        kotlin.system.exitProcess(0)
     }   
+    println("Well done!\nThe word was $word!")
     return word
 }
 
