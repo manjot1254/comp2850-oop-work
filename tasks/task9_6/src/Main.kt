@@ -3,5 +3,7 @@
 import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
-    // Implement main program here
+    try{
+        readData(args[0])
+}
 }

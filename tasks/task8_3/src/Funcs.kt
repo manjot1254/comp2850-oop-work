@@ -1,9 +1,11 @@
 // Task 8.3: functions for temperature analysis
 
 fun List<Int>.toRecord(){
-  //val other_list = listOf("One", "Two", "Three", "Four", "Five")
-  //(other_list[this], this).to(Record)
-  val
+  val other_list = listOf("One", "Two", "Three", "Four", "Five")
+  for (i in 1..other_list.size){
+    (other_list[i], this[i]).to(Record)
+  }
+}  
   
 }
 
@@ -12,7 +14,7 @@ fun fetchData(): List<Record> {
   // Use the listOf() and to() functions to create the dataset
   val list = listOf(1, 2, 3, 4, 5)
   for (i in 1..list.size){
-    list[i-1].toRecord()
+    list.toRecord()
   }
   return list
 }
