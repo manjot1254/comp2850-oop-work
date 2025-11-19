@@ -22,6 +22,3 @@ classDiagram
         +checkStock()
         +takePayment()
     }
-
-
-[mer]: https://mermaid.js.org/
