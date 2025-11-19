@@ -10,5 +10,12 @@ fun main() {
     val input = readLine()
 
     println("Input: $input")
-    printReversed(input)       // replace this line
+    fun printReversed(text: String?) {
+    when (text) {
+        null -> println("Result: null")
+        else -> println("Result: ${text.reversed().uppercase()}")
+    }
+}
+
+
 }
