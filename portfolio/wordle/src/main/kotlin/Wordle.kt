@@ -1,9 +1,7 @@
 // Implement the six required functions here
 import java.io.File
-import pickRandomWord
 
 fun isValid(word: String): Boolean { 
-    //val maxWordlength: Int = 5
     if (word.length == 5){
         return true
     }
@@ -25,33 +23,15 @@ fun pickRandomWord(words: MutableList<String>): String {
 
 fun obtainGuess(attempt: Int): String { 
     println("--Attempt $attempt--")
-    var counter = 1
     var word = readln().toString().uppercase()
 
-    val wordList = readWordList("/workspaces/comp2850-oop-work/portfolio/wordle/data/words.txt");
-    val targetWord = pickRandomWord(wordList);
-
-    while (((isValid(word) == true) && (word.uppercase() != targetWord)) && (counter < 6)){
-        println("No match.")
-        displayGuess(word.uppercase(), evaluateGuess(word.uppercase(), targetWord))
-
-        counter = counter + 1
-        println("\n--Attempt $counter--")
-        word = readln().toString()
+    if (isValid(word) == true){
+        return word
     }
-    if (counter == 6){
-        println("Out of guesses")
-        println("The word was $targetWord")
-        kotlin.system.exitProcess(0)
-
+    else{
+        println("Invalid word. Try again.")
+        return obtainGuess(attempt)
     }
-    else if (isValid(word) != true){
-        println("Invalid guess")
-        println("The word was $targetWord")
-        kotlin.system.exitProcess(0)
-    }   
-    println("Well done!\nThe word was $word!")
-    return word
 }
 
 fun evaluateGuess(guess: String, target: String): List<Int> { 
@@ -83,5 +63,4 @@ fun displayGuess(guess: String, matches: List<Int>) {
             print("\u001B[31m ?\u001B[0m")
         }}
     print("\n")
-    return
 }
